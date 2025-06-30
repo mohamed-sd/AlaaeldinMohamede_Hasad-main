@@ -56,7 +56,7 @@ class HomeScreenState extends State<HomeScreen>
   //
   late final ScrollController _scrollController = ScrollController();
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
-  GlobalKey<RefreshIndicatorState>();
+      GlobalKey<RefreshIndicatorState>();
 
   Color mainColor = Color(0xff271301);
   Color marqueeBgColor = Color(0xff150900);
@@ -79,8 +79,8 @@ class HomeScreenState extends State<HomeScreen>
       context.read<GetBuyerChatListCubit>().fetch();
       context.read<BlockedUsersListCubit>().blockedUsersList();
     }
-    /* 
-  
+    /*
+
     _scrollController.addListener(() {
       if (_scrollController.isEndReached()) {
         if (context.read<FetchHomeAllItemsCubit>().hasMoreData()) {
@@ -102,76 +102,81 @@ class HomeScreenState extends State<HomeScreen>
       context: context,
       barrierColor: Colors.transparent, // خلفية شفافة
       builder: (context) {
-        return
-          Align(
-            alignment: Alignment.centerRight,
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(50),
-                bottomLeft: Radius.circular(50),
-              ),
-              child: Container(
-                padding: EdgeInsets.all(20),
-                height: double.infinity,
-                width: MediaQuery.of(context).size.width * 0.70,
-                color: Color.fromARGB(255, 66, 37, 26),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: context.color.mainGold,
-                            width: 2,
-                          ),
-                          borderRadius: BorderRadius.circular(50)
-                      ),
-                      child: Icon(Icons.close , color: context.color.mainGold,),
-                    ),
-                    Row(
-                      children: [
-                        Container(
-                          width: 80,
-                          height: 80,
-                          padding: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                                color: context.color.mainGold,width: 1
-                            ),
-                            borderRadius: BorderRadius.circular(18),
-                          ),
-                          child: UiUtils.getSvg(AppIcons.appbarLogo, fit: BoxFit.cover ),
-                        ),
-
-                      ],
-                    ),
-                    SizedBox(height: 10,),
-                    Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
+        return Align(
+          alignment: Alignment.centerRight,
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(50),
+              bottomLeft: Radius.circular(50),
+            ),
+            child: Container(
+              padding: EdgeInsets.all(20),
+              height: double.infinity,
+              width: MediaQuery.of(context).size.width * 0.70,
+              color: Color.fromARGB(255, 66, 37, 26),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
                         border: Border.all(
-                            color: Colors.white,width: 1
+                          color: context.color.mainGold,
+                          width: 2,
                         ),
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(50)),
+                    child: Icon(
+                      Icons.close,
+                      color: context.color.mainGold,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 80,
+                        height: 80,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: context.color.mainGold, width: 1),
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                        child: UiUtils.getSvg(AppIcons.appbarLogo,
+                            fit: BoxFit.cover),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text("Equipation@info.com",style: TextStyle(
-                          color: Colors.white , fontSize: 14 , fontWeight: FontWeight.w600,
-                        ),textAlign: TextAlign.right,),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white, width: 1),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        "Equipation@info.com",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.right,
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  )
+                ],
               ),
             ),
-          );
-
+          ),
+        );
 
         //   Align(
         //   alignment: Alignment.centerLeft,
@@ -208,16 +213,14 @@ class HomeScreenState extends State<HomeScreen>
         //     ),
         //   ),
         // );
-
       },
     );
   }
 
-
   void loadItemData() {
     context.read<SliderCubit>().fetchSlider(
-      context,
-    );
+          context,
+        );
     context.read<FetchCategoryCubit>().fetchCategories();
     /*  context.read<FetchHomeScreenCubit>().fetch(
           city: HiveUtils.getCityName(),
@@ -264,8 +267,7 @@ class HomeScreenState extends State<HomeScreen>
           elevation: 0,
           //leadingWidth: double.maxFinite,
           titleSpacing: 0,
-          title:
-          Row(
+          title: Row(
             children: [
               Padding(
                 padding: EdgeInsets.all(10),
@@ -311,10 +313,11 @@ class HomeScreenState extends State<HomeScreen>
         ),
         backgroundColor: context.color.mainBrown,
         body: Column(
-
           children: [
             blogMarqueeWidget(),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             // InkWell(
             //   onTap: (){
             //     Navigator.pushNamed(context, Routes.welcome);
@@ -339,7 +342,7 @@ class HomeScreenState extends State<HomeScreen>
                 margin: EdgeInsets.only(top: 0),
                 padding: EdgeInsetsDirectional.only(top: 10, bottom: 80),
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 246, 246, 246),
+                    color: context.color.mainColor,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(40),
                       topRight: Radius.circular(40),
@@ -359,7 +362,7 @@ class HomeScreenState extends State<HomeScreen>
                     children: [
                       Padding(
                         padding:
-                        const EdgeInsetsDirectional.fromSTEB(30, 0, 20, 0),
+                            const EdgeInsetsDirectional.fromSTEB(30, 0, 20, 0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -408,7 +411,6 @@ class HomeScreenState extends State<HomeScreen>
                       SizedBox(
                         height: 10,
                       ),
-
                       SliderWidget(),
                       SizedBox(
                         height: 10,
@@ -442,48 +444,60 @@ class HomeScreenState extends State<HomeScreen>
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
-          CustomText(
-            Constant.appName,
-            fontSize: context.font.large,
-            fontWeight: FontWeight.bold,
-            color: context.color.mainBrown
-          ),
+          CustomText(Constant.appName,
+              fontSize: context.font.large,
+              fontWeight: FontWeight.bold,
+              color: context.color.mainBrown),
           //UiUtils.getSvg(AppIcons.appbarLogo, height: 40, width: 40 ,fit: BoxFit.cover ),
         ]);
   }
 
   Widget appbarIconWidget(IconData icon, Function callback) {
-    return IconButton(
-        onPressed: () {
-          callback();
-        },
-        icon: Icon(
-          icon,
-        ));
+    return Container(
+      width: 35,
+      margin: EdgeInsets.only(top: 5,bottom: 5 , right: 3),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(50)),
+      child: IconButton(
+          onPressed: () {
+            callback();
+          },
+          icon: Icon(
+            icon,size: 20,color: context.color.mainBrown,
+          )),
+    );
   }
 
   List<Widget> appbarActionsWidget() {
     return [
-      appbarIconWidget(Icons.favorite_border, () {
-        UiUtils.checkUser(
-            onNotGuest: () {
-              Navigator.pushNamed(context, Routes.favoritesScreen);
-            },
-            context: context);
-      }),
-      appbarIconWidget(Icons.search, () {
-        Navigator.pushNamed(context, Routes.searchScreenRoute, arguments: {
-          "autoFocus": true,
-        });
-      }),
-      appbarIconWidget(Icons.notifications_active_outlined, () {
-        UiUtils.checkUser(
-            onNotGuest: () {
-              Navigator.pushNamed(context, Routes.notificationPage);
-            },
-            context: context);
-      }),
+      Padding(
+        padding: EdgeInsets.only(top: 5 , left: 2, bottom: 5),
+        child: appbarIconWidget(Icons.favorite_border, () {
+          UiUtils.checkUser(
+              onNotGuest: () {
+                Navigator.pushNamed(context, Routes.favoritesScreen);
+              },
+              context: context);
+        }),
+      ),
+      Padding(
+        padding:  EdgeInsets.only(top: 5 , left: 2, bottom: 5),
+        child: appbarIconWidget(Icons.search, () {
+          Navigator.pushNamed(context, Routes.searchScreenRoute, arguments: {
+            "autoFocus": true,
+          });
+        }),
+      ),
+      Padding(
+        padding:  EdgeInsets.only(top: 5 , left: 10, bottom: 5),
+        child: appbarIconWidget(Icons.notifications_active_outlined, () {
+          UiUtils.checkUser(
+              onNotGuest: () {
+                Navigator.pushNamed(context, Routes.notificationPage);
+              },
+              context: context);
+        }),
+      ),
       // appbarIconWidget(Icons.person_2_outlined, () {
       //   Navigator.pushNamed(context, Routes.profileScreen );
       // }),
@@ -493,32 +507,32 @@ class HomeScreenState extends State<HomeScreen>
   Widget blogMarqueeWidget() {
     return BlocBuilder<FetchBlogsCubit, FetchBlogsState>(
         builder: (context, state) {
-          if (state is FetchBlogsSuccess) {
-            String mergedTitle = state.blogModel.map((e) => e.title).join('\t\t\t');
-            return GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  Routes.blogsScreenRoute,
-                );
-              },
-              child: Container(
-                color: context.color.mainBrown,
-                padding: EdgeInsetsDirectional.symmetric(vertical: 5),
-                child: MarqueeText(
-                  text: mergedTitle,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .copyWith(color: Colors.white),
-                  velocity: 50,
-                ),
-              ),
+      if (state is FetchBlogsSuccess) {
+        String mergedTitle = state.blogModel.map((e) => e.title).join('\t\t\t');
+        return GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              Routes.blogsScreenRoute,
             );
-          } else {
-            return SizedBox.shrink();
-          }
-        });
+          },
+          child: Container(
+            color: context.color.mainBrown,
+            padding: EdgeInsetsDirectional.symmetric(vertical: 5),
+            child: MarqueeText(
+              text: mergedTitle,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(color: Colors.white),
+              velocity: 50,
+            ),
+          ),
+        );
+      } else {
+        return SizedBox.shrink();
+      }
+    });
   }
 }
 

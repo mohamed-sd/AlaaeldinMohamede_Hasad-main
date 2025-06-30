@@ -251,7 +251,7 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.green,
+                          // color: Colors.green,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         // margin: EdgeInsets.only(top: 8),
@@ -340,117 +340,126 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
 
   Widget subCategoryWidget(
       List<CategoryModel> subcategories, int categoryId, String categoryName) {
-    return
-      Container(
-        padding: EdgeInsets.only(top: 10),
-        child: GridView.count(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          crossAxisCount: 3,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-          children: List.generate(
-             subcategories.length,
-                (i) {
-              final subcategory = subcategories[i];
-              return GestureDetector(
-                onTap: () {
-                  if (subcategory.children!.isEmpty &&
-                      subcategory.subcategoriesCount == 0) {
-                    Navigator.pushNamed(context, Routes.itemsList,
-                        arguments: {
-                          'catID': subcategory.id.toString(),
-                          'catName': subcategory.name,
-                          "categoryIds": [
-                            categoryId.toString(),
-                            subcategory.id.toString()
-                          ]
-                        });
-                  } else {
-                    Navigator.pushNamed(context, Routes.subCategoryScreen,
-                        arguments: {
-                          "categoryList": subcategory.children,
-                          "catName": subcategory.name,
-                          "catId": subcategory.id,
-                          "categoryIds": [
-                            categoryId.toString(),
-                            subcategory.id.toString()
-                          ]
-                        });
-                  }
-                },
-
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  clipBehavior: Clip.hardEdge,
-                  child:
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Material(
-                      color: Colors.transparent,
-                      elevation: 5,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Container(
-                        width: double.infinity,
-                        height: MediaQuery.sizeOf(context).height * 0.13,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
+    return Padding(
+      padding: EdgeInsets.only(top: 10),
+      child: Column(
+        children: [
+          GridView.count(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            crossAxisCount: 3,
+            mainAxisSpacing: 8,
+            crossAxisSpacing: 8,
+            children: List.generate(
+              subcategories.length > 6 ? 6 : subcategories.length,
+                  (i) {
+                final subcategory = subcategories[i];
+                return GestureDetector(
+                  onTap: () {
+                    if (subcategory.children!.isEmpty &&
+                        subcategory.subcategoriesCount == 0) {
+                      Navigator.pushNamed(context, Routes.itemsList,
+                          arguments: {
+                            'catID': subcategory.id.toString(),
+                            'catName': subcategory.name,
+                            "categoryIds": [
+                              categoryId.toString(),
+                              subcategory.id.toString()
+                            ]
+                          });
+                    } else {
+                      Navigator.pushNamed(context, Routes.subCategoryScreen,
+                          arguments: {
+                            "categoryList": subcategory.children,
+                            "catName": subcategory.name,
+                            "catId": subcategory.id,
+                            "categoryIds": [
+                              categoryId.toString(),
+                              subcategory.id.toString()
+                            ]
+                          });
+                    }
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      // color: context.color.mainGold,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    clipBehavior: Clip.hardEdge,
+                    child: Stack(
+                      children: [
+                        Positioned.fill(
+                          child: UiUtils.imageType(
+                            subcategory.url ?? '',
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.all(5),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFF120F36),
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Align(
-                                        alignment: AlignmentDirectional(0, 0),
-                                        child: UiUtils.imageType(
-                                            subcategory.url ?? '',
-                                            fit: BoxFit.cover,
-                                            width: 25
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          child: Container(
+                            // color: Colors.black.withValues(alpha: 0.5),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 6, horizontal: 8),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Colors.black.withValues(alpha: 0.0),
+                                  Colors.black.withValues(alpha: 1), // أسود شبه شفاف في الأسفل
+                                ],
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(vertical: 5),
-                              child: Text(
-                                subcategory.name ?? '',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: context.font.small,
-                                ),
+                            child: Text(
+                              subcategory.name ?? '',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: context.font.small,
                               ),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
-                          ],
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
-        ),
-      );
+          if (subcategories.length > 6) ...[
+            SizedBox(height: 10,),
+            Align(
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.subCategoryScreen,
+                      arguments: {
+                        "categoryList": subcategories,
+                        "catName": categoryName,
+                        "catId": categoryId,
+                        "categoryIds": [categoryId.toString()]
+                      });
+                },
+                child: Center(
+                  child: CustomText(
+                    "seeAll".translate(context),
+                    showUnderline: true,
+                    fontSize: context.font.smaller + 3,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 5)
+          ],
+        ],
+      ),
+    );
   }
 }
