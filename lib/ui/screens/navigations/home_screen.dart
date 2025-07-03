@@ -280,8 +280,8 @@ class HomeScreenState extends State<HomeScreen>
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
-                            width: 1, color: context.color.mainBrown)),
-                    child: Icon(Icons.person, color: context.color.mainBrown),
+                            width: 1, color: Colors.white)),
+                    child: Icon(Icons.person, color: Colors.white),
                   ),
                 ),
               ),
@@ -306,7 +306,7 @@ class HomeScreenState extends State<HomeScreen>
                   child: appbarTitleWidget()),
             ],
           ),
-          backgroundColor: context.color.mainGold,
+          backgroundColor: Color(0xff07311A),
           foregroundColor: Colors.black,
           // backgroundColor: const Color.fromARGB(0, 0, 0, 0),
           actions: appbarActionsWidget(),
@@ -447,7 +447,7 @@ class HomeScreenState extends State<HomeScreen>
           CustomText(Constant.appName,
               fontSize: context.font.large,
               fontWeight: FontWeight.bold,
-              color: context.color.mainBrown),
+              color: Colors.white),
           //UiUtils.getSvg(AppIcons.appbarLogo, height: 40, width: 40 ,fit: BoxFit.cover ),
         ]);
   }
