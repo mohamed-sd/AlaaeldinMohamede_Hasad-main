@@ -27,12 +27,12 @@ class PaymentGateway {
 
 class AppSettings {
   /// Basic Settings
-  static const String applicationName = 'Enjaz App';
+  static const String applicationName = 'حصاد';
   static const String packageName = 'com.eclassify.wrteam';
   static const String shareAppText = "Share this App";
 
   // static const String hostUrl = "https://admin.mining-market.com/";
-  static const String hostUrl = "https://admin.enjaz.com.sd";
+  static const String hostUrl = "https://admin.hasad.sd/";
 
   static const int apiDataLoadLimit = 20;
   static const int maxCategoryShowLengthInHomeScreen = 5;
