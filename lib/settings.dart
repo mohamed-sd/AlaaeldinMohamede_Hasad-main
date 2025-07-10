@@ -32,8 +32,7 @@ class AppSettings {
   static const String shareAppText = "Share this App";
 
   // static const String hostUrl = "https://admin.mining-market.com/";
-  static const String hostUrl = "https://admin.hasad.sd/";
-
+  static const String hostUrl = "https://admin.bareeq.sd/";
   static const int apiDataLoadLimit = 20;
   static const int maxCategoryShowLengthInHomeScreen = 5;
 

@@ -484,13 +484,13 @@ class MainActivityState extends State<MainActivity>
                 // buildBottomNavigationbarItem(
                 //     2, AppIcons.articles, AppIcons.articles, "  مجتمع إنجاز "),
                 buildBottomNavigationbarItem(2, AppIcons.listViewIcon,
-                    AppIcons.listViewIcon, " إجراءات حصاد "),
+                    AppIcons.listViewIcon, "  دليل المزارع "),
 
                 // buildBottomNavigationbarItem(
                 //     3, AppIcons.articles, AppIcons.articles, "   إنجاز "),
 
                 buildBottomNavigationbarItem(3, AppIcons.articles,
-                    AppIcons.articles, " مجتمع حصاد")
+                    AppIcons.articles, " مجتمع الزراعة")
               ]),
         ),
       ),
