@@ -316,7 +316,7 @@ class HomeScreenState extends State<HomeScreen>
           children: [
             blogMarqueeWidget(),
             SizedBox(
-              height: 10,
+              height: 0,
             ),
             // InkWell(
             //   onTap: (){
@@ -329,9 +329,12 @@ class HomeScreenState extends State<HomeScreen>
             Container(
                 // color: context.color.mainGold,
                 padding: const EdgeInsetsDirectional.only(
-                    start: sidePadding, end: sidePadding, bottom: 10, top: 0),
+                    start: sidePadding, end: sidePadding, bottom: 0, top: 0),
                 alignment: AlignmentDirectional.centerStart,
                 child: LocationWidget()),
+            SizedBox(
+              height: 5,
+            ),
             // SizedBox(height: 10,),
             // Container(
             //   margin: EdgeInsets.symmetric(horizontal: 10),

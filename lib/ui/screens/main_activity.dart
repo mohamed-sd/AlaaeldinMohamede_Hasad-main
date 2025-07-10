@@ -108,7 +108,7 @@ class MainActivityState extends State<MainActivity>
   StreamSubscription<Uri>? _linkSubscription;
   Color mainColor = Color(0xff271301);
   Color bottomNavigationIconColor = Colors.white;
-  Color bottomNavigationSelectedIconColor = Color(0xFFEDC242);
+  Color bottomNavigationSelectedIconColor = Color(0xFF7aad44);
   @override
   void initState() {
     super.initState();
@@ -117,7 +117,7 @@ class MainActivityState extends State<MainActivity>
       svgEdit.loadSVG(value);
       svgEdit.change("Path_11299-2",
           attribute: "fill",
-          value: svgEdit.flutterColorToHexColor(Color(0xFFEDC242))
+          value: svgEdit.flutterColorToHexColor(Color(0xFF7aad44))
           //value: svgEdit.flutterColorToHexColor(context.color.territoryColor)
           );
       svgLoaded = true;
@@ -268,7 +268,7 @@ class MainActivityState extends State<MainActivity>
     ErrorFilter.setContext(context);
     svgEdit.change("Path_11299-2",
         attribute: "fill",
-        value: svgEdit.flutterColorToHexColor(Color(0xFFEDC242))
+        value: svgEdit.flutterColorToHexColor(Color(0xFF7aad44))
         //value: svgEdit.flutterColorToHexColor(context.color.territoryColor)
         );
   }
@@ -595,7 +595,7 @@ class MainActivityState extends State<MainActivity>
             children: <Widget>[
               if (currentTab == index) ...{
                 UiUtils.getSvg(activeSvg,
-                    color: Color(0xFFEDC242)),
+                    color: Color(0xFF7aad44)),
               } else ...{
                 UiUtils.getSvg(svgImage, color: bottomNavigationIconColor),
                 //UiUtils.getSvg(svgImage,color: context.color.textLightColor.withValues(alpha: 0.5)),
@@ -603,7 +603,7 @@ class MainActivityState extends State<MainActivity>
               CustomText(title,
                   textAlign: TextAlign.center,
                   color: currentTab == index
-                      ? Color(0xFFEDC242)
+                      ? Color(0xFF7aad44)
                       : bottomNavigationIconColor
                   //color: currentTab == index ? context.color.textDefaultColor : context.color.textLightColor.withValues(alpha: 0.5)
                   ),

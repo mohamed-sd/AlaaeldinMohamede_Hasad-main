@@ -9,7 +9,7 @@ import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-Color iconBgColor = Color(0xffFCB917);
+Color iconBgColor = Color(0xff7aad44);
 Color mainColor = Color(0xff271301);
 
 class LocationWidget extends StatelessWidget {

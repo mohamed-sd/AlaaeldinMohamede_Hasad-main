@@ -262,7 +262,7 @@ class HomeScreenState extends State<HomeNews>
             ],
           ),
 
-          backgroundColor: context.color.mainBrown,
+          backgroundColor: Color(0xff07311A),
           foregroundColor: context.color.mainGold,
           // backgroundColor: const Color.fromARGB(0, 0, 0, 0),
           actions: appbarActionsWidget(),
@@ -778,36 +778,54 @@ class HomeScreenState extends State<HomeNews>
   }
 
   Widget appbarIconWidget(IconData icon, Function callback) {
-    return IconButton(
-        onPressed: () {
-          callback();
-        },
-        icon: Icon(
-          icon,
-        ));
+    return Container(
+      width: 35,
+      margin: EdgeInsets.only(top: 5,bottom: 5 , right: 3),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(50)),
+      child: IconButton(
+          onPressed: () {
+            callback();
+          },
+          icon: Icon(
+            icon,size: 20,color: context.color.mainBrown,
+          )),
+    );
   }
 
   List<Widget> appbarActionsWidget() {
     return [
-      appbarIconWidget(Icons.favorite_border, () {
-        UiUtils.checkUser(
-            onNotGuest: () {
-              Navigator.pushNamed(context, Routes.favoritesScreen);
-            },
-            context: context);
-      }),
-      appbarIconWidget(Icons.search, () {
-        Navigator.pushNamed(context, Routes.searchScreenRoute, arguments: {
-          "autoFocus": true,
-        });
-      }),
-      appbarIconWidget(Icons.notifications_active_outlined, () {
-        UiUtils.checkUser(
-            onNotGuest: () {
-              Navigator.pushNamed(context, Routes.notificationPage);
-            },
-            context: context);
-      }),
+      Padding(
+        padding: EdgeInsets.only(top: 5 , left: 2, bottom: 5),
+        child: appbarIconWidget(Icons.favorite_border, () {
+          UiUtils.checkUser(
+              onNotGuest: () {
+                Navigator.pushNamed(context, Routes.favoritesScreen);
+              },
+              context: context);
+        }),
+      ),
+      Padding(
+        padding:  EdgeInsets.only(top: 5 , left: 2, bottom: 5),
+        child: appbarIconWidget(Icons.search, () {
+          Navigator.pushNamed(context, Routes.searchScreenRoute, arguments: {
+            "autoFocus": true,
+          });
+        }),
+      ),
+      Padding(
+        padding:  EdgeInsets.only(top: 5 , left: 10, bottom: 5),
+        child: appbarIconWidget(Icons.notifications_active_outlined, () {
+          UiUtils.checkUser(
+              onNotGuest: () {
+                Navigator.pushNamed(context, Routes.notificationPage);
+              },
+              context: context);
+        }),
+      ),
+      // appbarIconWidget(Icons.person_2_outlined, () {
+      //   Navigator.pushNamed(context, Routes.profileScreen );
+      // }),
     ];
   }
 
