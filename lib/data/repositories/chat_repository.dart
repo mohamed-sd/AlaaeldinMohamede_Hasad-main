@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:eClassify/data/model/chat/chat_user_model.dart';
-import 'package:eClassify/data/model/data_output.dart';
-import 'package:eClassify/ui/screens/chat/chat_audio/widgets/chat_widget.dart';
-import 'package:eClassify/utils/api.dart';
+import 'package:hasad/data/model/chat/chat_user_model.dart';
+import 'package:hasad/data/model/data_output.dart';
+import 'package:hasad/ui/screens/chat/chat_audio/widgets/chat_widget.dart';
+import 'package:hasad/utils/api.dart';
 import 'package:flutter/material.dart';
 
 class ChatRepository {

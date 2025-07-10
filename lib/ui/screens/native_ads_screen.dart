@@ -1,8 +1,8 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:eClassify/ui/screens/navigations/home_screen.dart';
-import 'package:eClassify/utils/constant.dart';
+import 'package:hasad/ui/screens/navigations/home_screen.dart';
+import 'package:hasad/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 

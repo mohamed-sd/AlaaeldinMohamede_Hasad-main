@@ -3,9 +3,9 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:eClassify/utils/constant.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/helper_utils.dart';
+import 'package:hasad/utils/constant.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/helper_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 

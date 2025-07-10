@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:path/path.dart' as path;
 import 'package:dio/dio.dart';
-import 'package:eClassify/data/model/data_output.dart';
-import 'package:eClassify/data/model/subscription_package_model.dart';
-import 'package:eClassify/utils/api.dart';
+import 'package:hasad/data/model/data_output.dart';
+import 'package:hasad/data/model/subscription_package_model.dart';
+import 'package:hasad/utils/api.dart';
 
 class SubscriptionRepository {
   Future<DataOutput<SubscriptionPackageModel>> getSubscriptionPacakges(

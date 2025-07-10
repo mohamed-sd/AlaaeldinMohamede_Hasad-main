@@ -1,9 +1,9 @@
 
-import 'package:eClassify/data/model/category_model.dart';
-import 'package:eClassify/data/model/item_filter_model.dart';
-import 'package:eClassify/data/model/system_settings_model.dart';
-import 'package:eClassify/settings.dart';
-import 'package:eClassify/ui/screens/filter_screen.dart';
+import 'package:hasad/data/model/category_model.dart';
+import 'package:hasad/data/model/item_filter_model.dart';
+import 'package:hasad/data/model/system_settings_model.dart';
+import 'package:hasad/settings.dart';
+import 'package:hasad/ui/screens/filter_screen.dart';
 import 'package:flutter/material.dart';
 
 const String svgPath = 'assets/svg/';

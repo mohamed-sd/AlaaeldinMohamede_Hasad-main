@@ -1,15 +1,15 @@
-import 'package:eClassify/data/cubits/category/fetch_category_cubit.dart';
-import 'package:eClassify/data/cubits/system/fetch_language_cubit.dart';
-import 'package:eClassify/data/cubits/system/fetch_system_settings_cubit.dart';
-import 'package:eClassify/data/cubits/system/language_cubit.dart';
-import 'package:eClassify/data/helper/widgets.dart';
-import 'package:eClassify/data/model/system_settings_model.dart';
+import 'package:hasad/data/cubits/category/fetch_category_cubit.dart';
+import 'package:hasad/data/cubits/system/fetch_language_cubit.dart';
+import 'package:hasad/data/cubits/system/fetch_system_settings_cubit.dart';
+import 'package:hasad/data/cubits/system/language_cubit.dart';
+import 'package:hasad/data/helper/widgets.dart';
+import 'package:hasad/data/model/system_settings_model.dart';
 
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/custom_text.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/hive_utils.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/custom_text.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/hive_utils.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

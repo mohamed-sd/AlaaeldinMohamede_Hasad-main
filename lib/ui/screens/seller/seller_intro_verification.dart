@@ -1,11 +1,11 @@
-import 'package:eClassify/app/routes.dart';
-import 'package:eClassify/ui/screens/navigations/home_screen.dart';
+import 'package:hasad/app/routes.dart';
+import 'package:hasad/ui/screens/navigations/home_screen.dart';
 
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/app_icon.dart';
-import 'package:eClassify/utils/custom_text.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/app_icon.dart';
+import 'package:hasad/utils/custom_text.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart';
 
 class SellerIntroVerificationScreen extends StatefulWidget {

@@ -1,13 +1,13 @@
 import 'dart:developer';
 
-import 'package:eClassify/app/routes.dart';
+import 'package:hasad/app/routes.dart';
 
-import 'package:eClassify/ui/screens/widgets/custom_text_form_field.dart';
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/custom_text.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/helper_utils.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/ui/screens/widgets/custom_text_form_field.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/custom_text.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/helper_utils.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,4 @@
-import 'package:eClassify/utils/api.dart';
+import 'package:hasad/utils/api.dart';
 
 class Type {
   String? id;

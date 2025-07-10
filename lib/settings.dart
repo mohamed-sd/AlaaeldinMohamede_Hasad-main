@@ -1,4 +1,4 @@
-import 'package:eClassify/utils/helper_utils.dart';
+import 'package:hasad/utils/helper_utils.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class PaymentGateway {

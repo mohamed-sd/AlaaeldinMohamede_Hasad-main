@@ -1,7 +1,7 @@
 import 'dart:math';
-import 'package:eClassify/utils/extensions/extensions.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/utils/ui_utils.dart';
 
 class GoldShimmerCard extends StatefulWidget {
   final String title;

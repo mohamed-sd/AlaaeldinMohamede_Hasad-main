@@ -1,4 +1,4 @@
-import 'package:eClassify/data/cubits/system/language_cubit.dart';
+import 'package:hasad/data/cubits/system/language_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

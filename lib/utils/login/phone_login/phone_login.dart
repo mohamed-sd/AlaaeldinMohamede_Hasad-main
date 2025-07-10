@@ -1,8 +1,8 @@
-import 'package:eClassify/utils/api.dart';
-import 'package:eClassify/utils/constant.dart';
-import 'package:eClassify/utils/login/lib/login_status.dart';
-import 'package:eClassify/utils/login/lib/login_system.dart';
-import 'package:eClassify/utils/login/lib/payloads.dart';
+import 'package:hasad/utils/api.dart';
+import 'package:hasad/utils/constant.dart';
+import 'package:hasad/utils/login/lib/login_status.dart';
+import 'package:hasad/utils/login/lib/login_system.dart';
+import 'package:hasad/utils/login/lib/payloads.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class PhoneLogin extends LoginSystem {

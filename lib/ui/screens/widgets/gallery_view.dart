@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/app_icon.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/app_icon.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart';
 
 class GalleryViewWidget extends StatefulWidget {

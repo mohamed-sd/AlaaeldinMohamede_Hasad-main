@@ -1,6 +1,6 @@
-import 'package:eClassify/data/model/data_output.dart';
-import 'package:eClassify/data/model/user_model.dart';
-import 'package:eClassify/utils/api.dart';
+import 'package:hasad/data/model/data_output.dart';
+import 'package:hasad/data/model/user_model.dart';
+import 'package:hasad/utils/api.dart';
 
 class ItemBuyerRepository {
   Future<DataOutput<BuyerModel>> fetchItemBuyerList(int itemId) async {

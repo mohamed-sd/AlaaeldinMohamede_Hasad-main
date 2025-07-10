@@ -1,6 +1,6 @@
 
 
-import 'package:eClassify/ui/theme/theme.dart';
+import 'package:hasad/ui/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 enum AppTheme { dark, light }

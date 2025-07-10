@@ -1,6 +1,6 @@
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/validator.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

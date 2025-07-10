@@ -1,6 +1,6 @@
 
 
-import 'package:eClassify/data/repositories/chat_repository.dart';
+import 'package:hasad/data/repositories/chat_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BlockUserState {}

@@ -4,34 +4,34 @@ import 'dart:async';
 import 'dart:io';
 
 //import 'package:app_links/app_links.dart';
-import 'package:eClassify/app/routes.dart';
-import 'package:eClassify/data/cubits/item/search_item_cubit.dart';
-import 'package:eClassify/data/cubits/subscription/fetch_user_package_limit_cubit.dart';
-import 'package:eClassify/data/cubits/system/fetch_system_settings_cubit.dart';
-import 'package:eClassify/data/model/item/item_model.dart';
-import 'package:eClassify/data/model/system_settings_model.dart';
-import 'package:eClassify/ui/screens/chat/chat_list_screen.dart';
-import 'package:eClassify/ui/screens/navigations/eyes.dart';
-import 'package:eClassify/ui/screens/navigations/home_guide.dart';
-import 'package:eClassify/ui/screens/navigations/home_news.dart';
-import 'package:eClassify/ui/screens/navigations/home_screen.dart';
-import 'package:eClassify/ui/screens/home/search_screen.dart';
-import 'package:eClassify/ui/screens/item/my_items_screen.dart';
-import 'package:eClassify/ui/screens/user_profile/profile_screen.dart';
+import 'package:hasad/app/routes.dart';
+import 'package:hasad/data/cubits/item/search_item_cubit.dart';
+import 'package:hasad/data/cubits/subscription/fetch_user_package_limit_cubit.dart';
+import 'package:hasad/data/cubits/system/fetch_system_settings_cubit.dart';
+import 'package:hasad/data/model/item/item_model.dart';
+import 'package:hasad/data/model/system_settings_model.dart';
+import 'package:hasad/ui/screens/chat/chat_list_screen.dart';
+import 'package:hasad/ui/screens/navigations/eyes.dart';
+import 'package:hasad/ui/screens/navigations/home_guide.dart';
+import 'package:hasad/ui/screens/navigations/home_news.dart';
+import 'package:hasad/ui/screens/navigations/home_screen.dart';
+import 'package:hasad/ui/screens/home/search_screen.dart';
+import 'package:hasad/ui/screens/item/my_items_screen.dart';
+import 'package:hasad/ui/screens/user_profile/profile_screen.dart';
 
-import 'package:eClassify/ui/screens/widgets/blurred_dialog_box.dart';
-import 'package:eClassify/ui/screens/widgets/blurred_dialoge_box.dart';
-import 'package:eClassify/ui/screens/widgets/maintenance_mode.dart';
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/app_icon.dart';
-import 'package:eClassify/utils/constant.dart';
-import 'package:eClassify/utils/custom_text.dart';
-import 'package:eClassify/utils/error_filter.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/helper_utils.dart';
-import 'package:eClassify/utils/hive_utils.dart';
-import 'package:eClassify/utils/svg/svg_edit.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/ui/screens/widgets/blurred_dialog_box.dart';
+import 'package:hasad/ui/screens/widgets/blurred_dialoge_box.dart';
+import 'package:hasad/ui/screens/widgets/maintenance_mode.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/app_icon.dart';
+import 'package:hasad/utils/constant.dart';
+import 'package:hasad/utils/custom_text.dart';
+import 'package:hasad/utils/error_filter.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/helper_utils.dart';
+import 'package:hasad/utils/hive_utils.dart';
+import 'package:hasad/utils/svg/svg_edit.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -406,6 +406,7 @@ class MainActivityState extends State<MainActivity>
         //color: context.color.secondaryColor,
         shape: const CircularNotchedRectangle(),
         child: Container(
+          height: 85,
           // color: context.color.secondaryColor,
           decoration: BoxDecoration(
             borderRadius: borderRadius,
@@ -453,8 +454,8 @@ class MainActivityState extends State<MainActivity>
                               context: context);
                         },
                         child: SizedBox(
-                          width: 60,
-                          height: 60,
+                            width: 60,
+                            height: 95,
                           child: svgLoaded == false
                               ? Container(
                             padding:  EdgeInsets.all(0),
@@ -472,9 +473,15 @@ class MainActivityState extends State<MainActivity>
                                     size: 50,
                                   ),
                                 )
-                              : SvgPicture.string(
-                                  svgEdit.toSVGString() ?? "",
-                                ),
+                              :    Container(
+                              height: 65,
+                              child: Column(
+                                children: [
+                                  UiUtils.getSvg(AppIcons.plusIcon , height: 65),
+                                  Text('أضف إعلانك' , style: TextStyle(color: context.color.mainColor , fontSize: 12,fontWeight: FontWeight.w900),)
+                                ],
+                              )
+                          )
                         ),
                       ),
                     )),

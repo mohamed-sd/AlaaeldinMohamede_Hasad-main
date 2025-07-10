@@ -2,15 +2,15 @@
 
 import 'dart:async';
 
-import 'package:eClassify/data/cubits/subscription/in_app_purchase_cubit.dart';
-import 'package:eClassify/ui/screens/widgets/blurred_dialog_box.dart';
-import 'package:eClassify/ui/screens/widgets/blurred_dialoge_box.dart';
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/constant.dart';
-import 'package:eClassify/utils/custom_text.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/helper_utils.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/data/cubits/subscription/in_app_purchase_cubit.dart';
+import 'package:hasad/ui/screens/widgets/blurred_dialog_box.dart';
+import 'package:hasad/ui/screens/widgets/blurred_dialoge_box.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/constant.dart';
+import 'package:hasad/utils/custom_text.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/helper_utils.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';

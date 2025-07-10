@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:eClassify/data/helper/custom_exception.dart';
-import 'package:eClassify/data/model/home_slider.dart';
-import 'package:eClassify/settings.dart';
-import 'package:eClassify/utils/api.dart';
-import 'package:eClassify/utils/network/network_availability.dart';
+import 'package:hasad/data/helper/custom_exception.dart';
+import 'package:hasad/data/model/home_slider.dart';
+import 'package:hasad/settings.dart';
+import 'package:hasad/utils/api.dart';
+import 'package:hasad/utils/network/network_availability.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

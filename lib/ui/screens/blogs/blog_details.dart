@@ -1,9 +1,9 @@
-import 'package:eClassify/data/model/blog_model.dart';
+import 'package:hasad/data/model/blog_model.dart';
 
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/custom_text.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/custom_text.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 

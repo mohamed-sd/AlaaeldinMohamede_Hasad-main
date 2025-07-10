@@ -1,6 +1,6 @@
-import 'package:eClassify/data/model/category_model.dart';
-import 'package:eClassify/data/model/custom_field/custom_field_model.dart';
-import 'package:eClassify/data/model/seller_ratings_model.dart';
+import 'package:hasad/data/model/category_model.dart';
+import 'package:hasad/data/model/custom_field/custom_field_model.dart';
+import 'package:hasad/data/model/seller_ratings_model.dart';
 
 class ItemModel {
   int? id;

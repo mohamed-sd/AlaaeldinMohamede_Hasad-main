@@ -1,13 +1,13 @@
 // custom_drawer_widget.dart
-import 'package:eClassify/app/routes.dart';
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/app_icon.dart';
-import 'package:eClassify/utils/custom_text.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/hive_utils.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/app/routes.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/app_icon.dart';
+import 'package:hasad/utils/custom_text.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/hive_utils.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart'; // حسب استخدامك
-import 'package:eClassify/ui/screens/widgets/blurred_dialoge_box.dart';
+import 'package:hasad/ui/screens/widgets/blurred_dialoge_box.dart';
 
 class CustomDrawerWidget extends StatelessWidget {
   const CustomDrawerWidget({super.key});

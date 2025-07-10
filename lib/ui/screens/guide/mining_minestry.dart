@@ -1,7 +1,7 @@
-import 'package:eClassify/app/routes.dart';
-import 'package:eClassify/ui/screens/guide/detailes.dart';
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
+import 'package:hasad/app/routes.dart';
+import 'package:hasad/ui/screens/guide/detailes.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 
 class Mining_minestry extends StatelessWidget {

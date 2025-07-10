@@ -1,4 +1,4 @@
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart';
 
 ///Light Theme Colors
@@ -34,7 +34,7 @@ const Color warningMessageColor = Color(0xFFC2AF6F);
 
 //status button color
 const Color pendingButtonColor = Color(0xff0C5D9C);
-const Color soldOutButtonColor = Color(0xffFFBB33);
+const Color soldOutButtonColor = Color(0xffFF7aad44);
 const Color deactivateButtonColor = Color(0xffFE0000);
 const Color activateButtonColor = Color(0xFF02AD11);
 

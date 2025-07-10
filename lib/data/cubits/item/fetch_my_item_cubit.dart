@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:eClassify/data/model/data_output.dart';
-import 'package:eClassify/data/model/item/item_model.dart';
-import 'package:eClassify/data/repositories/item/item_repository.dart';
+import 'package:hasad/data/model/data_output.dart';
+import 'package:hasad/data/model/item/item_model.dart';
+import 'package:hasad/data/repositories/item/item_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FetchMyItemsState {}

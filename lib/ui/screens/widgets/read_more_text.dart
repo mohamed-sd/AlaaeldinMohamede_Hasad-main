@@ -1,5 +1,5 @@
-import 'package:eClassify/utils/custom_text.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
+import 'package:hasad/utils/custom_text.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 
 class ReadMoreText extends StatefulWidget {

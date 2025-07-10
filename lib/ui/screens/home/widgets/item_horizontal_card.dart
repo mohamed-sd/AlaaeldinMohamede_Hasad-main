@@ -1,17 +1,17 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:eClassify/app/app_theme.dart';
-import 'package:eClassify/data/cubits/favorite/favorite_cubit.dart';
-import 'package:eClassify/data/cubits/favorite/manage_fav_cubit.dart';
-import 'package:eClassify/data/cubits/system/app_theme_cubit.dart';
-import 'package:eClassify/data/model/item/item_model.dart';
-import 'package:eClassify/data/repositories/favourites_repository.dart';
-import 'package:eClassify/ui/screens/widgets/promoted_widget.dart';
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/app_icon.dart';
-import 'package:eClassify/utils/custom_text.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/extensions/lib/currency_formatter.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/app/app_theme.dart';
+import 'package:hasad/data/cubits/favorite/favorite_cubit.dart';
+import 'package:hasad/data/cubits/favorite/manage_fav_cubit.dart';
+import 'package:hasad/data/cubits/system/app_theme_cubit.dart';
+import 'package:hasad/data/model/item/item_model.dart';
+import 'package:hasad/data/repositories/favourites_repository.dart';
+import 'package:hasad/ui/screens/widgets/promoted_widget.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/app_icon.dart';
+import 'package:hasad/utils/custom_text.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/extensions/lib/currency_formatter.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:eClassify/settings.dart';
-import 'package:eClassify/utils/constant.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/helper_utils.dart';
-import 'package:eClassify/utils/hive_utils.dart';
-import 'package:eClassify/utils/payment/gateaways/stripe_service.dart';
+import 'package:hasad/settings.dart';
+import 'package:hasad/utils/constant.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/helper_utils.dart';
+import 'package:hasad/utils/hive_utils.dart';
+import 'package:hasad/utils/payment/gateaways/stripe_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:phonepe_payment_sdk/phonepe_payment_sdk.dart';

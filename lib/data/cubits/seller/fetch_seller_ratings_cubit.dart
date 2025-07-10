@@ -1,6 +1,6 @@
-import 'package:eClassify/data/model/data_output.dart';
-import 'package:eClassify/data/model/seller_ratings_model.dart';
-import 'package:eClassify/data/repositories/seller/seller_ratings_repository.dart';
+import 'package:hasad/data/model/data_output.dart';
+import 'package:hasad/data/model/seller_ratings_model.dart';
+import 'package:hasad/data/repositories/seller/seller_ratings_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 abstract class FetchSellerRatingsState {}

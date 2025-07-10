@@ -1,16 +1,16 @@
 import 'dart:ui' as ui;
 
-import 'package:eClassify/app/app_theme.dart';
-import 'package:eClassify/data/cubits/company_cubit.dart';
-import 'package:eClassify/data/cubits/system/app_theme_cubit.dart';
-import 'package:eClassify/ui/screens/widgets/animated_routes/blur_page_route.dart';
-import 'package:eClassify/ui/screens/widgets/blurred_dialoge_box.dart';
-import 'package:eClassify/ui/screens/widgets/custom_text_form_field.dart';
-import 'package:eClassify/ui/theme/theme.dart';
-import 'package:eClassify/utils/app_icon.dart';
-import 'package:eClassify/utils/custom_text.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/ui_utils.dart';
+import 'package:hasad/app/app_theme.dart';
+import 'package:hasad/data/cubits/company_cubit.dart';
+import 'package:hasad/data/cubits/system/app_theme_cubit.dart';
+import 'package:hasad/ui/screens/widgets/animated_routes/blur_page_route.dart';
+import 'package:hasad/ui/screens/widgets/blurred_dialoge_box.dart';
+import 'package:hasad/ui/screens/widgets/custom_text_form_field.dart';
+import 'package:hasad/ui/theme/theme.dart';
+import 'package:hasad/utils/app_icon.dart';
+import 'package:hasad/utils/custom_text.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';

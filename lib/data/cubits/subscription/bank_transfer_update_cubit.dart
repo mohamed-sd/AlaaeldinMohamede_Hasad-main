@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:eClassify/data/repositories/subscription_repository.dart';
+import 'package:hasad/data/repositories/subscription_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 abstract class BankTransferUpdateState {}

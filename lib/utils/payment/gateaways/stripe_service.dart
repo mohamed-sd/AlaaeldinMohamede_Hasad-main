@@ -1,9 +1,9 @@
-import 'package:eClassify/app/app_theme.dart';
-import 'package:eClassify/data/cubits/system/app_theme_cubit.dart';
-import 'package:eClassify/settings.dart';
-import 'package:eClassify/utils/constant.dart';
-import 'package:eClassify/utils/extensions/extensions.dart';
-import 'package:eClassify/utils/helper_utils.dart';
+import 'package:hasad/app/app_theme.dart';
+import 'package:hasad/data/cubits/system/app_theme_cubit.dart';
+import 'package:hasad/settings.dart';
+import 'package:hasad/utils/constant.dart';
+import 'package:hasad/utils/extensions/extensions.dart';
+import 'package:hasad/utils/helper_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
