@@ -282,7 +282,7 @@ class MainActivityState extends State<MainActivity>
 
   late List<Widget> pages = [
     HomeScreen(from: widget.from),
-    Eyes(),
+    HomeScreen(from: widget.from),
     HomeGuide(),
     // HomeNews(),
     // ChatListScreen(),
@@ -423,7 +423,7 @@ class MainActivityState extends State<MainActivity>
                     AppIcons.homeNavActive, "  الإعلانات "),
 
                 buildBottomNavigationbarItem(1, AppIcons.eye,
-                    AppIcons.eye, "  تتبع أعين "),
+                    AppIcons.eye, "   المتجر "),
 
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
