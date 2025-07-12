@@ -422,8 +422,8 @@ class MainActivityState extends State<MainActivity>
                 buildBottomNavigationbarItem(0, AppIcons.home,
                     AppIcons.homeNavActive, "  الإعلانات "),
 
-                buildBottomNavigationbarItem(1, AppIcons.eye,
-                    AppIcons.eye, "   المتجر "),
+                buildBottomNavigationbarItem(1, AppIcons.categoryIcon,
+                    AppIcons.categoryIcon, "   المتجر "),
 
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
