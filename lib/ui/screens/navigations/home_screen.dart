@@ -142,7 +142,7 @@ class HomeScreenState extends State<HomeScreen>
                         padding: EdgeInsets.all(20),
                         decoration: BoxDecoration(
                           border: Border.all(
-                              color: context.color.mainGold, width: 1),
+                              color: context.color.lightGreen, width: 1),
                           borderRadius: BorderRadius.circular(18),
                         ),
                         child: UiUtils.getSvg(AppIcons.appbarLogo,
@@ -280,8 +280,8 @@ class HomeScreenState extends State<HomeScreen>
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
-                            width: 1, color: Colors.white)),
-                    child: Icon(Icons.person, color: Colors.white),
+                            width: 1, color: context.color.lightGreen)),
+                    child: Icon(Icons.person, color: context.color.lightGreen),
                   ),
                 ),
               ),

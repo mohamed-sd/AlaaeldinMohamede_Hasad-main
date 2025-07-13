@@ -13,6 +13,7 @@ Color lightTextColor = const Color(0xFF000000).withValues(alpha: 0.5);
 Color widgetsBorderColorLight = const Color(0xffEEEEEE).withValues(alpha: 0.6);
 //Color senderChatColor = const Color.fromARGB(255, 233, 233, 233).withValues(22);
 
+
 ///Dark Theme Colors
 Color primaryColorDark = const Color(0xff121212);
 Color secondaryColorDark = const Color(0xff1C1C1C).withValues(alpha: 0.9);
@@ -42,6 +43,7 @@ const Color activateButtonColor = Color(0xff07311A);
 const Color mainBackground = Color(0xFFeaf2e2);
 const Color mainGoldColor = Color(0xFF7aad44);
 const Color mainBrownColor = Color(0xFF0e6133);
+const Color lightGreenColor = Color(0xFFB0FA62);
 
 //Button text color
 const Color buttonTextColor = Colors.white;
@@ -49,6 +51,12 @@ const Color buttonTextColor = Colors.white;
 ///Advance
 //Theme settings
 extension ColorPrefs on ColorScheme {
+
+  Color get lightGreen => _getColor(
+    brightness,
+    lightColor: lightGreenColor,
+    darkColor: lightGreenColor,
+  );
 
   Color get mainColor => _getColor(brightness,
       lightColor: mainBackground, darkColor: mainBackground);

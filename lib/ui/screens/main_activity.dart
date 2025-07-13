@@ -595,7 +595,7 @@ class MainActivityState extends State<MainActivity>
             children: <Widget>[
               if (currentTab == index) ...{
                 UiUtils.getSvg(activeSvg,
-                    color: Color(0xFF7aad44)),
+                    color: context.color.lightGreen),
               } else ...{
                 UiUtils.getSvg(svgImage, color: bottomNavigationIconColor),
                 //UiUtils.getSvg(svgImage,color: context.color.textLightColor.withValues(alpha: 0.5)),
@@ -603,7 +603,7 @@ class MainActivityState extends State<MainActivity>
               CustomText(title,
                   textAlign: TextAlign.center,
                   color: currentTab == index
-                      ? Color(0xFF7aad44)
+                      ? context.color.lightGreen
                       : bottomNavigationIconColor
                   //color: currentTab == index ? context.color.textDefaultColor : context.color.textLightColor.withValues(alpha: 0.5)
                   ),

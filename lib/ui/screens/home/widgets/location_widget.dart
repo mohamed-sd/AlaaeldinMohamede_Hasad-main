@@ -8,15 +8,22 @@ import 'package:hasad/utils/hive_utils.dart';
 import 'package:hasad/utils/ui_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:path/path.dart';
 
-Color iconBgColor = Color(0xff7aad44);
+
 Color mainColor = Color(0xff271301);
 
 class LocationWidget extends StatelessWidget {
   const LocationWidget({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
+
+    // The Color of the icon
+    Color iconBgColor = context.color.lightGreen ;
+
     return FittedBox(
       fit: BoxFit.none,
       alignment: AlignmentDirectional.centerStart,
