@@ -189,152 +189,155 @@ class _CategoryWidgetHomeState extends State<CategoryWidgetHome> {
   }
 
   Widget categoryWidget(List<CategoryModel> categories) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      itemCount: categories.length,
-      itemBuilder: (context, index) {
-        if (categories.length > 10 && index == categories.length) {
-          return moreCategory(context);
-        }
-        final item = categories[index];
-        bool isExpanded = expandedCategroryId == item.id.toString();
-        return Container(
-          margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-          child: Column(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  if (item.children!.isNotEmpty) {
-                    setState(() {
-                      expandedCategroryId =
-                          isExpanded ? '' : item.id.toString();
-                    });
-                    HiveUtils.setExpandedCategoryId(expandedCategroryId);
-                  } else {
-                    Navigator.pushNamed(context, Routes.itemsList, arguments: {
-                      'catID': item.id.toString(),
-                      'catName': item.name,
-                      "categoryIds": [item.id.toString()]
-                    });
-                  }
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 138,
-                  padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    // image: DecorationImage(
-                    //   image: AssetImage(AppIcons.categoryBg),
-                    //   fit: BoxFit.fill,
-                    // ),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 4,
-                        color: Color(0x33000000),
-                        offset: Offset(
-                          0,
-                          2,
-                        ),
-                      )
-                    ],
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(
+    return Padding(
+      padding:EdgeInsets.only(bottom: 10),
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: categories.length,
+        itemBuilder: (context, index) {
+          if (categories.length > 10 && index == categories.length) {
+            return moreCategory(context);
+          }
+          final item = categories[index];
+          bool isExpanded = expandedCategroryId == item.id.toString();
+          return Container(
+            margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+            child: Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    if (item.children!.isNotEmpty) {
+                      setState(() {
+                        expandedCategroryId =
+                            isExpanded ? '' : item.id.toString();
+                      });
+                      HiveUtils.setExpandedCategoryId(expandedCategroryId);
+                    } else {
+                      Navigator.pushNamed(context, Routes.itemsList, arguments: {
+                        'catID': item.id.toString(),
+                        'catName': item.name,
+                        "categoryIds": [item.id.toString()]
+                      });
+                    }
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 138,
+                    padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 0),
+                    decoration: BoxDecoration(
                       color: Colors.white,
-                      width: 6,
+                      // image: DecorationImage(
+                      //   image: AssetImage(AppIcons.categoryBg),
+                      //   fit: BoxFit.fill,
+                      // ),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 4,
+                          color: Color(0x33000000),
+                          offset: Offset(
+                            0,
+                            2,
+                          ),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(25),
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 6,
+                      ),
                     ),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          // color: Colors.green,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        // margin: EdgeInsets.only(top: 8),
-                        // padding: EdgeInsets.all(5),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Align(
-                              alignment: AlignmentDirectional(0, 1),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image.network(
-                                  item.url ?? "",
-                                  width: double.infinity,
-                                  height: 90,
-                                  fit: BoxFit.fill,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            // color: Colors.green,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          // margin: EdgeInsets.only(top: 8),
+                          // padding: EdgeInsets.all(5),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Align(
+                                alignment: AlignmentDirectional(0, 1),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.network(
+                                    item.url ?? "",
+                                    width: double.infinity,
+                                    height: 90,
+                                    fit: BoxFit.fill,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center
-                          ,children: [
-                            Expanded(
-                              flex: 3,
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center
+                            ,children: [
+                              Expanded(
+                                flex: 3,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    CustomText(
+                                      item.name ?? "",
+                                      fontSize: 16,
+                                      textAlign: TextAlign.right,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 5),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  CustomText(
-                                    item.name ?? "",
-                                    fontSize: 16,
-                                    textAlign: TextAlign.right,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
+                                  Icon(
+                                    isExpanded
+                                        ? Icons.keyboard_arrow_up
+                                        : Icons.keyboard_arrow_down,
+                                    color: context.color.mainBrown,
+                                    weight: 8,
+                                    size: 30,
                                   ),
                                 ],
                               ),
                             ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 5),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  isExpanded
-                                      ? Icons.keyboard_arrow_up
-                                      : Icons.keyboard_arrow_down,
-                                  color: context.color.mainBrown,
-                                  weight: 8,
-                                  size: 30,
-                                ),
-                              ],
-                            ),
+                            ],
                           ),
-                          ],
                         ),
-                      ),
 
-                      // Icon(
-                      //   isExpanded
-                      //       ? Icons.keyboard_arrow_up
-                      //       : Icons.keyboard_arrow_down,
-                      //   color: Colors.black,
-                      // ),
-                    ],
+                        // Icon(
+                        //   isExpanded
+                        //       ? Icons.keyboard_arrow_up
+                        //       : Icons.keyboard_arrow_down,
+                        //   color: Colors.black,
+                        // ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              if (isExpanded)
-                subCategoryWidget(item.children!, item.id ?? 0, item.name ?? "")
-            ],
-          ),
-        );
-      },
+                if (isExpanded)
+                  subCategoryWidget(item.children!, item.id ?? 0, item.name ?? "")
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 

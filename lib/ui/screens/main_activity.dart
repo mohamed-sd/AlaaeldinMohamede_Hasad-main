@@ -419,11 +419,11 @@ class MainActivityState extends State<MainActivity>
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                buildBottomNavigationbarItem(0, AppIcons.home,
-                    AppIcons.homeNavActive, "  الإعلانات "),
+                buildBottomNavigationbarItem(0, AppIcons.homeNav,
+                    AppIcons.homeNav, "  الإعلانات "),
 
-                buildBottomNavigationbarItem(1, AppIcons.categoryIcon,
-                    AppIcons.categoryIcon, "   المتجر "),
+                buildBottomNavigationbarItem(1, AppIcons.chatNav,
+                    AppIcons.chatNav, "   المتجر "),
 
                 BlocListener<FetchUserPackageLimitCubit,
                         FetchUserPackageLimitState>(
@@ -485,19 +485,12 @@ class MainActivityState extends State<MainActivity>
                         ),
                       ),
                     )),
-                // buildBottomNavigationbarItem(2, AppIcons.myAdsNav,
-                //     AppIcons.myAdsNavActive, "myAdsTab".translate(context)),
 
-                // buildBottomNavigationbarItem(
-                //     2, AppIcons.articles, AppIcons.articles, "  مجتمع إنجاز "),
-                buildBottomNavigationbarItem(2, AppIcons.listViewIcon,
-                    AppIcons.listViewIcon, "  دليل المزارع "),
+                buildBottomNavigationbarItem(2, AppIcons.myAdsNav,
+                    AppIcons.myAdsNav, "  دليل المزارع "),
 
-                // buildBottomNavigationbarItem(
-                //     3, AppIcons.articles, AppIcons.articles, "   إنجاز "),
-
-                buildBottomNavigationbarItem(3, AppIcons.articles,
-                    AppIcons.articles, " مجتمع الزراعة")
+                buildBottomNavigationbarItem(3, AppIcons.profileNav,
+                    AppIcons.profileNav, " مجتمع الزراعة")
               ]),
         ),
       ),
@@ -595,9 +588,9 @@ class MainActivityState extends State<MainActivity>
             children: <Widget>[
               if (currentTab == index) ...{
                 UiUtils.getSvg(activeSvg,
-                    color: context.color.lightGreen),
+                    color: context.color.lightGreen , height: 25),
               } else ...{
-                UiUtils.getSvg(svgImage, color: bottomNavigationIconColor),
+                UiUtils.getSvg(svgImage, color: bottomNavigationIconColor,height: 25),
                 //UiUtils.getSvg(svgImage,color: context.color.textLightColor.withValues(alpha: 0.5)),
               },
               CustomText(title,

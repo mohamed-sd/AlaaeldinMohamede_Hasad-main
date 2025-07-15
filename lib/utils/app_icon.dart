@@ -108,13 +108,13 @@ class AppIcons {
 
   ///Bottom nav icons
   static String homeNav = _svgPath("bottomnav/home");
-  static String homeNavActive = _svgPath("bottomnav/home_active");
+  static String homeNavActive = _svgPath("bottomnav/home");
   static String chatNav = _svgPath("bottomnav/chat");
-  static String chatNavActive = _svgPath("bottomnav/chat_active");
+  static String chatNavActive = _svgPath("bottomnav/chat");
   static String myAdsNav = _svgPath("bottomnav/myads");
-  static String myAdsNavActive = _svgPath("bottomnav/myads_active");
+  static String myAdsNavActive = _svgPath("bottomnav/myads");
   static String profileNav = _svgPath("bottomnav/profile");
-  static String profileNavActive = _svgPath("bottomnav/profile_active");
+  static String profileNavActive = _svgPath("bottomnav/profile");
 
   ///
   static String _svgPath(String name) {
