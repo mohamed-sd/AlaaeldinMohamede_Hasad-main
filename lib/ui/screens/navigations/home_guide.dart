@@ -1501,10 +1501,11 @@ class HomeScreenState extends State<HomeGuide>
       height: 100,
       padding: EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(AppIcons.categoryBg),
-          fit: BoxFit.fill,
-        ),
+        color : context.color.lightGreen,
+        // image: DecorationImage(
+        //   image: AssetImage(AppIcons.categoryBg),
+        //   fit: BoxFit.fill,
+        // ),
         boxShadow: [
           BoxShadow(
             blurRadius: 4,
