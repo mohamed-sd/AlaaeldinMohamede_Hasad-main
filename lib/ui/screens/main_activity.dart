@@ -487,10 +487,10 @@ class MainActivityState extends State<MainActivity>
                     )),
 
                 buildBottomNavigationbarItem(2, AppIcons.myAdsNav,
-                    AppIcons.myAdsNav, "  دليل المزارع "),
+                    AppIcons.myAdsNav, " الدليل "),
 
                 buildBottomNavigationbarItem(3, AppIcons.profileNav,
-                    AppIcons.profileNav, " مجتمع الزراعة")
+                    AppIcons.profileNav, " المجتمع ")
               ]),
         ),
       ),

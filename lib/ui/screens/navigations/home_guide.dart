@@ -365,7 +365,7 @@ class HomeScreenState extends State<HomeGuide>
                       SizedBox(
                         height: 10,
                       ),
-                      SliderWidget(),
+                      // SliderWidget(),
                       Container(
                           margin: EdgeInsets.symmetric(horizontal: 10),
                           child: const SliderWidget()),
