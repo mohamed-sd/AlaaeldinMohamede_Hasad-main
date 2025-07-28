@@ -319,13 +319,13 @@ class _ItemCardState extends State<ItemCard> {
                           padding: EdgeInsets.all(2),
                           width: double.infinity
                           ,decoration: BoxDecoration(
-                            color: Colors.amber,
+                            color: context.color.mainGold,
                             borderRadius: BorderRadius.circular(10)
                         ),child: CustomText(
                           textAlign: TextAlign.center,
                           (widget.item?.price ?? 0.0).currencyFormat,
                           fontWeight: FontWeight.bold,
-                          color: context.color.mainBrown,
+                          color: Colors.black,
                           fontSize: context.font.large,
                         ),
                         ),
@@ -334,7 +334,7 @@ class _ItemCardState extends State<ItemCard> {
                             padding: EdgeInsets.all(3),
                             width: double.infinity
                             ,decoration: BoxDecoration(
-                            color: Colors.amber,
+                            color: context.color.mainGold,
                             borderRadius: BorderRadius.circular(8),),
                             child: Row(
                               children: [

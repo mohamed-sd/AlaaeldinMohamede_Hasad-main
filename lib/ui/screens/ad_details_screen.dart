@@ -111,6 +111,7 @@ class AdDetailsScreen extends StatefulWidget {
 
 class AdDetailsScreenState extends CloudState<AdDetailsScreen> {
   //ImageView
+  int _rating = 4;
   int currentPage = 0;
   bool? isFeaturedLimit;
   List<String> selectedFeaturedAdsOptions = [];
@@ -312,12 +313,12 @@ class AdDetailsScreenState extends CloudState<AdDetailsScreen> {
                               : 15),
                       child: IconButton(
                         onPressed: () {
-                         HelperUtils.shareItem(context, model.slug! , '');
+                          HelperUtils.shareItem(context, model.slug!, '');
                         },
                         icon: Icon(
                           Icons.share,
                           size: 24,
-                          color: context.color.mainGold,
+                          color: Colors.white,
                         ),
                       ),
                     ),
@@ -450,8 +451,7 @@ class AdDetailsScreenState extends CloudState<AdDetailsScreen> {
                 ],
               ),
               backgroundColor: context.color.mainColor,
-              bottomNavigationBar:
-              Padding(
+              bottomNavigationBar: Padding(
                   padding:
                   const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   child: bottomButtonWidget()),
@@ -459,67 +459,798 @@ class AdDetailsScreenState extends CloudState<AdDetailsScreen> {
                 physics: const AlwaysScrollableScrollPhysics(),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(13.0, 0.0, 13.0, 13.0),
-                  child:
-
-                  Container(
+                  child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 5),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-
-                        Container(
-                          margin: EdgeInsets.only(top: 10),
-                          padding: EdgeInsets.all(2),
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                              color: context.color.mainGold,
-                              borderRadius: BorderRadius.circular(16)
+                      children: [
+                        // User Title
+                        Padding(
+                          padding:
+                          EdgeInsetsDirectional.fromSTEB(10, 20, 10, 5),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 5),
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                color: context.color.mainGold,
+                                borderRadius: BorderRadius.circular(16)),
+                            child: Text(
+                              model.name!,
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
-                          child: Center(
-                            child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 10),
-                                child: CustomText(
-                                  model.name!,
-                                  color: context.color.textDefaultColor,
-                                  fontSize: context.font.large,
-                                  maxLines: 2,
-                                  fontStyle: FontStyle.normal,
-                                )),
+                        ),
+                        // User Image Slider
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      blurRadius: 5,
+                                      spreadRadius: 1,
+                                      offset: Offset(0, 2),
+                                      blurStyle: BlurStyle.normal),
+                                ]),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Container(
+                                  margin: EdgeInsets.symmetric(horizontal: 10),
+                                  child: Stack(children: [
+                                    setImageViewer(),
+                                    Opacity(
+                                      opacity: 0.9,
+                                      child: Align(
+                                        alignment: AlignmentDirectional(1, -1),
+                                        child: Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              30, 15, 10, 0),
+                                          child: Container(
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                              BorderRadius.circular(10),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(2, 0, 2, 0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        3, 0, 3, 0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                      MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .center,
+                                                      children: [
+                                                        Icon(
+                                                          Icons
+                                                              .remove_red_eye_outlined,
+                                                          color:
+                                                          Color(0xFF5C5C5C),
+                                                          size: 20,
+                                                        ),
+                                                        Text(
+                                                          model.views != null
+                                                              ? model.views!
+                                                              .toString()
+                                                              : "0",
+                                                          textAlign:
+                                                          TextAlign.center,
+                                                          style: TextStyle(
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                            FontWeight.w500,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ]),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: 5, horizontal: 10),
+                                  width: double.infinity,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.center,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
+                                          child: Container(
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 5),
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                                color: context.color.mainGold,
+                                                borderRadius:
+                                                BorderRadius.circular(12)),
+                                            child: Text(
+                                              model.price!.currencyFormat,
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 5,
+                                      ),
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 0, 0, 0),
+                                          child: Container(
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 5),
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                                color: context.color.mainGold,
+                                                borderRadius:
+                                                BorderRadius.circular(12)),
+                                            child: Text(
+                                              model.created!.formatDate(
+                                                  format: "d MMM yyyy"),
+                                              maxLines: 1,
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 0, 10, 10),
+                                  child: Container(
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsets.all(3),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: 5),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children:
+                                              List.generate(5, (index) {
+                                                return GestureDetector(
+                                                  onTap: () {
+                                                    setState(() {
+                                                      _rating = index + 1;
+                                                    });
+                                                  },
+                                                  child: Icon(
+                                                    index < _rating
+                                                        ? Icons.star
+                                                        : Icons.star_border,
+                                                    color: Colors.amber,
+                                                    size: 20,
+                                                  ),
+                                                );
+                                              }),
+                                            ),
+                                          ),
+
+                                          // Padding(
+                                          //   padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                                          //   child: RatingBar.builder(
+                                          //     onRatingUpdate: (newValue) =>
+                                          //         safeSetState(() => _model.ratingBarValue = newValue),
+                                          //     itemBuilder: (context, index) => Icon(
+                                          //       FFIcons.k12,
+                                          //       color: FlutterFlowTheme.of(context).buttonApp,
+                                          //     ),
+                                          //     direction: Axis.horizontal,
+                                          //     initialRating: _model.ratingBarValue ??= 4,
+                                          //     unratedColor: FlutterFlowTheme.of(context).boederColor,
+                                          //     itemCount: 5,
+                                          //     itemPadding: EdgeInsets.all(2),
+                                          //     itemSize: 15,
+                                          //     glowColor: FlutterFlowTheme.of(context).buttonApp,
+                                          //   ),
+                                          // ),
+                                          Expanded(
+                                            flex: 1,
+                                            child: Align(
+                                              alignment:
+                                              AlignmentDirectional(0, 0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(5, 0, 5, 0),
+                                                child: Text(
+                                                  '139 تقييم',
+                                                  style: TextStyle(
+                                                    fontSize: 12,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: 140,
+                                            decoration: BoxDecoration(
+                                              color: Colors.grey,
+                                              borderRadius:
+                                              BorderRadius.circular(8),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(10, 0, 10, 0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
+                                                    padding: EdgeInsets.all(3),
+                                                    child: Text(
+                                                      'عرض جمييع التقييمات',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 11,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
-                          height: 5,
+                          height: 10,
                         ),
+                        // User Detailes Container
+                        if (!isAddedByMe && model.user != null)
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(18),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      blurRadius: 5,
+                                      spreadRadius: 1,
+                                      offset: Offset(0, 2),
+                                      blurStyle: BlurStyle.normal),
+                                ]),
+                            child: Row(
+                              children: [
+                                ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: model.user!.profile != null &&
+                                        model.user!.profile != ""
+                                        ? UiUtils.getImage(model.user!.profile!,
+                                        fit: BoxFit.fill)
+                                        : UiUtils.getSvg(
+                                      AppIcons.defaultPersonLogo,
+                                      color: context.color.mainBrown,
+                                      fit: BoxFit.none,
+                                    )),
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        margin:
+                                        EdgeInsets.symmetric(horizontal: 5),
+                                        width: double.infinity,
+                                        padding:
+                                        EdgeInsets.symmetric(vertical: 2),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                            BorderRadius.circular(12),
+                                            border: Border.all(
+                                              color: Colors.grey,
+                                              width: 1,
+                                            )),
+                                        child: Text(
+                                          model.user!.name!,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 2,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.symmetric(horizontal: 5),
+                                        width: double.infinity,
+                                        padding:
+                                        EdgeInsets.symmetric(vertical: 2),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                            BorderRadius.circular(12),
+                                            border: Border.all(
+                                              color: Colors.grey,
+                                              width: 1,
+                                            )),
+                                        child: Text(
+                                          model.user!.email!,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, Routes.sellerProfileScreen,
+                                        arguments: {
+                                          "sellerId": model.user?.id
+                                        });
+                                  },
+                                  child: Container(
+                                    width: 120,
+                                    height: 60,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 216, 215, 215),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10, 0, 10, 0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        children: [
+                                          Text('حساب المعلن',
+                                              style: TextStyle(
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              )),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+
+                        SizedBox(
+                          height: 10,
+                        ),
+
+                        // User Basic Info
+                        if (model.customFields!.isNotEmpty)
+                          Container(
+                              padding: EdgeInsets.only(top: 10, bottom: 5),
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(18),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.grey,
+                                        blurRadius: 5,
+                                        spreadRadius: 1,
+                                        offset: Offset(0, 2),
+                                        blurStyle: BlurStyle.normal),
+                                  ]),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    margin:
+                                    EdgeInsets.symmetric(horizontal: 10),
+                                    padding: EdgeInsets.symmetric(vertical: 5),
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                        color: context.color.mainGold,
+                                        borderRadius:
+                                        BorderRadius.circular(10)),
+                                    child: Text(
+                                      'المعلومات الاساسية',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Wrap(
+                                        alignment: WrapAlignment.start,
+                                        children: [
+                                          ...List.generate(
+                                              model.customFields!.length,
+                                                  (index) {
+                                                if (model.customFields![index]
+                                                    .value!.isNotEmpty) {
+                                                  return Container(
+                                                    width:
+                                                    MediaQuery.sizeOf(context)
+                                                        .width *
+                                                        .42,
+                                                    margin: EdgeInsets.symmetric(
+                                                        vertical: 5, horizontal: 5),
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                      BorderRadius.circular(10),
+                                                      border: Border.all(
+                                                          color: Color.fromARGB(
+                                                              255, 197, 195, 195),
+                                                          width: 1),
+                                                    ),
+                                                    child: SizedBox(
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                              padding: EdgeInsets
+                                                                  .symmetric(
+                                                                  horizontal:
+                                                                  10,
+                                                                  vertical: 5),
+                                                              width:
+                                                              double.infinity,
+                                                              decoration: BoxDecoration(
+                                                                  borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                      10),
+                                                                  color: Color
+                                                                      .fromARGB(
+                                                                      255,
+                                                                      220,
+                                                                      220,
+                                                                      220)),
+                                                              child: Text(
+                                                                model
+                                                                    .customFields![
+                                                                index]
+                                                                    .name
+                                                                    .toString(),
+                                                                textAlign: TextAlign
+                                                                    .center,
+                                                                style: TextStyle(
+                                                                    fontSize: 14,
+                                                                    fontWeight:
+                                                                    FontWeight
+                                                                        .w800),
+                                                              )),
+                                                          Container(
+                                                              width:
+                                                              double.infinity,
+                                                              padding: EdgeInsets
+                                                                  .symmetric(
+                                                                  vertical: 5,
+                                                                  horizontal:
+                                                                  5),
+                                                              child: Text(
+                                                                model
+                                                                    .customFields![
+                                                                index]
+                                                                    .value
+                                                                    .toString(),
+                                                                textAlign: TextAlign
+                                                                    .center,
+                                                                style: TextStyle(
+                                                                    fontSize: 12,
+                                                                    fontWeight:
+                                                                    FontWeight
+                                                                        .w500),
+                                                              )),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  );
+
+                                                  // return Container(
+                                                  //   margin: EdgeInsets.all(2),
+                                                  //   padding: EdgeInsets.all(2),
+                                                  //   child: DecoratedBox(
+                                                  //     decoration: BoxDecoration(
+                                                  //         border: Border.all(
+                                                  //             color: Colors.red.withValues(alpha: 0.0))),
+                                                  //     child: SizedBox(
+                                                  //       width: MediaQuery.sizeOf(context).width * .40,
+                                                  //       child: Row(
+                                                  //         crossAxisAlignment: CrossAxisAlignment.start,
+                                                  //         mainAxisSize: MainAxisSize.min,
+                                                  //         children: [
+                                                  //           Container(
+                                                  //             height: 25,
+                                                  //             width: 25,
+                                                  //             alignment: Alignment.center,
+                                                  //             child: UiUtils.imageType(
+                                                  //                 model.customFields![index].image!,
+                                                  //                 fit: BoxFit.contain),
+                                                  //           ),
+                                                  //           SizedBox(width: 7),
+                                                  //           Column(
+                                                  //             crossAxisAlignment: CrossAxisAlignment.start,
+                                                  //             mainAxisSize: MainAxisSize.min,
+                                                  //             children: [
+                                                  //               Tooltip(
+                                                  //                 message: model.customFields![index].name,
+                                                  //                 child: CustomText(
+                                                  //                     (model.customFields?[index].name) ?? "",
+                                                  //                     maxLines: 1,
+                                                  //                     fontSize: context.font.small,
+                                                  //                     color: context.color.textLightColor),
+                                                  //               ),
+                                                  //               valueContent(
+                                                  //                   model.customFields![index].value),
+                                                  //               const SizedBox(
+                                                  //                 height: 12,
+                                                  //               )
+                                                  //             ],
+                                                  //           ),
+                                                  //         ],
+                                                  //       ),
+                                                  //     ),
+                                                  //   ),
+                                                  // );
+                                                } else {
+                                                  return SizedBox();
+                                                }
+                                              }),
+                                        ]),
+                                  ),
+                                ],
+                              )),
+
+                        SizedBox(
+                          height: 10,
+                        ),
+
+                        // The Detailes
                         Container(
-                          padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.symmetric(horizontal: 5 , vertical: 5),
+                          width: double.infinity,
                           decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(16),
+                              borderRadius: BorderRadius.circular(18),
                               boxShadow: [
                                 BoxShadow(
                                     color: Colors.grey,
                                     blurRadius: 5,
                                     spreadRadius: 1,
                                     offset: Offset(0, 2),
-                                    blurStyle: BlurStyle.normal
-                                ),]
-                          ),
-                          child: Column(
+                                    blurStyle: BlurStyle.normal),
+                              ]),
+                          child:Column(
                             children: [
-                              setImageViewer(),
-                              if (isAddedByMe) setLikesAndViewsCount(),
-                              setPriceAndStatus(),
-                              if (isAddedByMe) setRejectedReason(),
-                              if (model.address != null) setAddress(isDate: true),
+                              Container(
+                                padding: EdgeInsets.symmetric(vertical: 5),
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                    color: context.color.mainGold,
+                                    borderRadius:
+                                    BorderRadius.circular(10)),
+                                child: Text(
+                                  ' تفاصيل الإعلان ',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              Container(
+                                width: double.infinity,
+                                margin: EdgeInsets.only(top: 5),
+                                padding: EdgeInsets.only(top: 0, right: 3, left: 3, bottom: 3),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                      width: 1,
+                                    )),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 5 , horizontal: 5),
+                                  child: Text(
+                                      model.description!
+                                  ),
+                                ),
+                              )
                             ],
                           ),
-                        ),
-                        Divider(
-                            thickness: 1,
-                            color: context.color.textDefaultColor
-                                .withValues(alpha: 0.1)),
-                        if (!isAddedByMe && model.user != null)
-                          setSellerDetails(),
+                        )
+
+                        // Container(
+                        //     padding: EdgeInsets.all(5),
+                        //     width: double.infinity,
+                        //     decoration: BoxDecoration(
+                        //         color: Colors.white,
+                        //         borderRadius: BorderRadius.circular(20),
+                        //         boxShadow: [
+                        //           BoxShadow(
+                        //               color: Colors.grey,
+                        //               blurRadius: 5,
+                        //               spreadRadius: 1,
+                        //               offset: Offset(0, 2),
+                        //               blurStyle: BlurStyle.normal),
+                        //         ]),
+                        //   child : Row(
+                        //     mainAxisSize: MainAxisSize.max,
+                        //     children: [
+                        //       // Padding(
+                        //       //   padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                        //       //   child: ClipRRect(
+                        //       //     borderRadius: BorderRadius.circular(8),
+                        //       //     child: Image.asset(
+                        //       //       'assets/profile.jpg',
+                        //       //       width: 60,
+                        //       //       height: 60,
+                        //       //       fit: BoxFit.cover,
+                        //       //     ),
+                        //       //   ),
+                        //       // ),
+                        //       Expanded(
+                        //         // flex: 2,
+                        //         child: Column(
+                        //           mainAxisSize: MainAxisSize.min,
+                        //           children: [
+                        //             Expanded(
+                        //               child: Container(
+                        //                 width: double.infinity,
+                        //                 child: Column(
+                        //                   mainAxisSize: MainAxisSize.max,
+                        //                   children: [
+                        //                     Expanded(
+                        //                       child: Padding(
+                        //                         padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 2),
+                        //                         child: Text('طالب الخدمة')
+                        //                       ),
+                        //                     ),
+                        //                     Expanded(
+                        //                       child: Padding(
+                        //                         padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                        //                         child: Text('130 إعلان')
+                        //                       ),
+                        //                     ),
+                        //                   ],
+                        //                 ),
+                        //               ),
+                        //             ),
+                        //           ],
+                        //         ),
+                        //       ),
+                        //       Padding(
+                        //         padding: EdgeInsetsDirectional.fromSTEB(5, 5, 10, 5),
+                        //         child: Container(
+                        //           width: 120,
+                        //           height: 60,
+                        //           decoration: BoxDecoration(
+                        //             color: Colors.grey,
+                        //             borderRadius: BorderRadius.circular(10),
+                        //           ),
+                        //           child: Padding(
+                        //             padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                        //             child: Column(
+                        //               mainAxisSize: MainAxisSize.max,
+                        //               mainAxisAlignment: MainAxisAlignment.center,
+                        //               children: [
+                        //                 Text(
+                        //                   'حساب المعلن',
+                        //                   style: TextStyle(
+                        //                     letterSpacing: 0.0,
+                        //                     fontWeight: FontWeight.w500,
+                        //                   )
+                        //                 ),
+                        //               ],
+                        //             ),
+                        //           ),
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   )
+                        // ),
+
+                        // Old Data *********************************************************************
+                        ,
+                        // Container(
+                        //   margin: EdgeInsets.only(top: 50),
+                        //   padding: EdgeInsets.all(2),
+                        //   width: double.infinity,
+                        //   decoration: BoxDecoration(
+                        //       color: context.color.mainGold,
+                        //       borderRadius: BorderRadius.circular(16)),
+                        //   child: Center(
+                        //     child: Padding(
+                        //         padding:
+                        //             const EdgeInsets.symmetric(vertical: 10),
+                        //         child: CustomText(
+                        //           model.name!,
+                        //           color: context.color.textDefaultColor,
+                        //           fontSize: context.font.large,
+                        //           maxLines: 2,
+                        //           fontStyle: FontStyle.normal,
+                        //         )),
+                        //   ),
+                        // ),
+                        // SizedBox(
+                        //   height: 5,
+                        // ),
+                        // Container(
+                        //   padding: EdgeInsets.all(10),
+                        //   decoration: BoxDecoration(
+                        //       color: Colors.white,
+                        //       borderRadius: BorderRadius.circular(16),
+                        //       boxShadow: [
+                        //         BoxShadow(
+                        //             color: Colors.grey,
+                        //             blurRadius: 5,
+                        //             spreadRadius: 1,
+                        //             offset: Offset(0, 2),
+                        //             blurStyle: BlurStyle.normal),
+                        //       ]),
+                        //   child: Column(
+                        //     children: [
+                        //       setImageViewer(),
+                        //       if (isAddedByMe) setLikesAndViewsCount(),
+                        //       setPriceAndStatus(),
+                        //       if (isAddedByMe) setRejectedReason(),
+                        //       if (model.address != null)
+                        //         setAddress(isDate: true),
+                        //     ],
+                        //   ),
+                        // ),
+
+                        // Divider(
+                        //     thickness: 1,
+                        //     color: context.color.textDefaultColor
+                        //         .withValues(alpha: 0.1)),
+                        // if (!isAddedByMe && model.user != null)
+                        //   setSellerDetails(),
                         // const SizedBox(
                         //   height: 10,
                         // ),
@@ -529,20 +1260,22 @@ class AdDetailsScreenState extends CloudState<AdDetailsScreen> {
                             child:
                             AdBannerWidget(), // Custom widget for banner ad
                           ),
-                        ],
+                        ]else
+                          SizedBox(height: 0,),
+
                         // const SizedBox(
                         //   height: 10,
                         // ),
                         if (isAddedByMe)
                           if (!model.isFeature!) createFeaturesAds(),
-                        if (model.customFields!.isNotEmpty) customFields(),
+                        // if (model.customFields!.isNotEmpty) customFields(),
                         //detailsContainer Widget
                         //Dynamic Ads here
-                        Divider(
-                            thickness: 1,
-                            color: context.color.textDefaultColor
-                                .withValues(alpha: 0.1)),
-                        setDescription(),
+                        // Divider(
+                        //     thickness: 1,
+                        //     color: context.color.textDefaultColor
+                        //         .withValues(alpha: 0.1)),
+                        // setDescription(),
                         SizedBox(
                           height: 10,
                         ),
@@ -562,7 +1295,9 @@ class AdDetailsScreenState extends CloudState<AdDetailsScreen> {
                             child:
                             AdBannerWidget(), // Custom widget for banner ad
                           ),
-                        ],
+                        ]else
+                          SizedBox(height: 0,)
+                        ,
 
                         if (!isAddedByMe) reportedAdsWidget(),
                         if (!isAddedByMe) relatedAds(),
@@ -1839,7 +2574,7 @@ class AdDetailsScreenState extends CloudState<AdDetailsScreen> {
           ? BorderSide(color: context.color.mainBrown)
           : null,
       buttonColor: context.color.mainGold,
-      textColor: context.color.mainBrown,
+      textColor: Colors.black,
       buttonTitle: title,
       width: 50,
     );
@@ -2013,7 +2748,7 @@ class AdDetailsScreenState extends CloudState<AdDetailsScreen> {
             },
             builder: (context, state) {
               return setTopRowItem(
-                  alignment: AlignmentDirectional.topEnd,
+                  alignment: AlignmentDirectional.topStart,
                   marginVal: 10,
                   backgroundColor: Colors.white,
                   cornerRadius: 30,
